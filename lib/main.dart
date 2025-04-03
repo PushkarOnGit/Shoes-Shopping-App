@@ -15,10 +15,21 @@ class MyApp extends StatelessWidget {
       home: HomePage(),
       theme: ThemeData(
         fontFamily: 'Lato',
-        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromRGBO(255, 225, 30, 1.0), primary: Color.fromRGBO(254, 206,1,1)),
+        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromRGBO(255, 225, 30, 1.0), ),
         inputDecorationTheme: InputDecorationTheme(
           prefixIconColor: Color.fromRGBO(119, 119, 119, 1),
           hintStyle: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        textTheme: TextTheme(
+          titleMedium: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
+          bodySmall: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
+
+          )
         ),
       ),
       

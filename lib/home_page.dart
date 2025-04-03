@@ -1,3 +1,5 @@
+import 'package:ecommerce_app/global_variables.dart';
+import 'package:ecommerce_app/product_card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -9,12 +11,11 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<String> filters = ['All', 'Nike', 'Adidas', 'Bata', 'Puma'];
-  String selectedFilter = 'All'; // Initialize directly instead of using late
+  String selectedFilter = 'All';
 
   @override
   void initState() {
     super.initState();
-    // No need to initialize here since we did it above
   }
 
   @override
@@ -85,6 +86,22 @@ class _HomePageState extends State<HomePage> {
                     ),
                   );
                 },
+              ),
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: products.length,
+                  itemBuilder: (context, index){
+                  final product = products[index];
+                  return ProductCard(
+                    title: product['title'] as String,
+                    company: product['company'].toString(),
+                    price: product['price'] as double,
+                    image: product['imageUrl'] as String ,
+                    backgroundColor: index.isEven ? Color.fromRGBO(216, 240, 253, 1) : Color.fromRGBO(245,247,249,1),
+                  );
+              
+                  }
               ),
             ),
           ],
