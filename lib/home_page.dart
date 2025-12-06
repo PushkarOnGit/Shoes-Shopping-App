@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/cart_page.dart';
 import 'package:ecommerce_app/product_page.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,6 +15,7 @@ class _HomePageState extends State<HomePage> {
   int currentPage = 0;
   @override
   Widget build(BuildContext context) {
+    print(Provider.of<String>(context));
     return Scaffold(
       body: IndexedStack(index: currentPage, children: pages),
       bottomNavigationBar: BottomNavigationBar(
