@@ -18,6 +18,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(
           seedColor: Color.fromRGBO(255, 215, 0, 1),
         ),
+        textTheme: TextTheme(
+          titleMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          bodySmall: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
         inputDecorationTheme: InputDecorationTheme(
           hintStyle: TextStyle(
             color: Colors.black,
