@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
           seedColor: Color.fromRGBO(255, 215, 0, 1),
         ),
         textTheme: TextTheme(
+          titleLarge: TextStyle(fontWeight: FontWeight.bold, fontSize: 35),
           titleMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           bodySmall: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
@@ -27,6 +28,14 @@ class MyApp extends StatelessWidget {
             color: Colors.black,
             fontWeight: FontWeight.bold,
             fontSize: 16,
+          ),
+        ),
+        appBarTheme: AppBarTheme(
+          centerTitle: true,
+          titleTextStyle: TextStyle(
+            fontSize: 20,
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),

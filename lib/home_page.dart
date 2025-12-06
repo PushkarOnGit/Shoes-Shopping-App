@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/global_variable.dart';
 import 'package:ecommerce_app/product_card.dart';
+import 'package:ecommerce_app/product_details_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -37,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.all(20.0),
                   child: Text(
                     'Shoes\nCollection',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 35),
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
                 Expanded(
@@ -98,14 +99,24 @@ class _HomePageState extends State<HomePage> {
 
                 itemBuilder: (context, index) {
                   final product = products[index];
-                  return ProductCard(
-                    title: product['title'] as String,
-                    price: product['price'] as double,
-                    image: product['imageUrl'] as String,
-                    backgroundColor:
-                        index.isEven
-                            ? Color.fromRGBO(205, 243, 255, 1)
-                            : const Color.fromARGB(255, 232, 232, 232),
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder:
+                              (context) => ProductDetailsPage(product: product),
+                        ),
+                      );
+                    },
+                    child: ProductCard(
+                      title: product['title'] as String,
+                      price: product['price'] as double,
+                      image: product['imageUrl'] as String,
+                      backgroundColor:
+                          index.isEven
+                              ? Color.fromRGBO(205, 243, 255, 1)
+                              : const Color.fromARGB(255, 232, 232, 232),
+                    ),
                   );
                 },
               ),
