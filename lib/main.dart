@@ -42,7 +42,10 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        home: HomePage(),
+        home: Provider(
+          create: (context) => "Hello Provider of the HomePage",
+          child: HomePage(),
+        ),
       ),
     );
   }
